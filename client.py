@@ -23,8 +23,10 @@ def send(msg):
     print(client.recv(2048).decode(FORMAT))
 
 
-while True:
-    m = input()
-    send(m)   
-    if m == "DISCONNECT!":
-        break
+
+if __name__ == "__main__":
+    while True:
+        m = input()
+        send(m)   
+        if m == "DISCONNECT!":
+            break

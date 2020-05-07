@@ -1,6 +1,8 @@
 import socket
 import threading
 
+#"192.168.1.103"
+
 HEADER = 64
 PORT = 5050
 SERVER ="192.168.1.103"
@@ -27,6 +29,7 @@ def handle_client(conn,addr):
     
             print(f"[{addr}] {msg}")
             conn.send("Message recieved".encode(FORMAT))
+            
             
 
 
