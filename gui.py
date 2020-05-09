@@ -1,23 +1,22 @@
+print(1)
 from tkinter import ttk
 import tkinter as tk
-#import client
-#import server
-# from tkinter import scrolledtext
+import client
+from server import msgs
+import threading
+#from tkinter import scrolledtext
+
+def display():
+    # print(M.retrieve())
+    msg_list = msgs
+    d = tk.Message(frame,text=msg_list[-1])
+    d.place(x=0,y=10)
+
 
 def button_pressed():
     print("Button")
     client.send(text.get("1.0","end"))
     text.delete("1.0","end")
-
-
-def display_chat():
-    var = tk.StringVar()
-    var.set('aaaaaaaaaaa')
-
-
-
-
-
 
 app = tk.Tk()
 app.iconphoto(False, tk.PhotoImage(file="chat_icon2.png"))
@@ -54,6 +53,8 @@ button.place(relx=0.931,rely=0.85,relheight=0.2,relwidth=0.08)
 # display = tk.Message(frame,bg="#FFFFFF",textvariable=var)
 # display.place()
 
+thread = threading.Thread(target=display)
+thread.start()
 
 
 
