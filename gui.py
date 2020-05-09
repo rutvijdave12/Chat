@@ -1,6 +1,6 @@
 from tkinter import ttk
 import tkinter as tk
-import client
+#import client
 #import server
 # from tkinter import scrolledtext
 
@@ -29,25 +29,31 @@ app.geometry("720x580")
 frame = tk.Frame(app,bg='#041c07',bd=5)
 frame.place(relx=0,rely=0,relwidth=0.98,relheight=1)
 
-scroll = tk.Scrollbar(app)
-text = tk.Text(frame,bg="#333830",font=40)
-text.place(relx=0,rely=0.95,relwidth=0.9,relheight=0.5)
+scroll = tk.Scrollbar(app,bg="#333830",activebackground="#000000",highlightbackground="#000000")
+text = tk.Text(frame,bg="#333830",font=40,borderwidth=0,highlightthickness = 0)
+text.place(relx=0,rely=0.91,relwidth=0.94,relheight=0.08)
 #scroll.pack(side=tk.RIGHT,fill=tk.Y)
 scroll.place(relx=0.98,rely=0,relwidth=0.02,relheight=1)
 #text.pack(side=tk.BOTTOM,fill=tk.Y)
 #scroll.config(command=text.yview)
 #text.config(yscrollcommand=scroll.set,background="#1a2118")
 
-button = tk.Button(frame,relief="solid",text="Send",activebackground="#ad1717",activeforeground="#FFFFFF",bg="#89a18d",command=button_pressed )
-button.place(relx=0.901,rely=0.95,relwidth=0.1,relheight=0.05)
+send_button = tk.PhotoImage(file="send_48.png")
+send_img = tk.Label(image=send_button,borderwidth=0)
+#send_img.pack()
+
+
+button = tk.Button(frame,relief="solid",image=send_button,activebackground="#041c07",highlightthickness = 0,command=button_pressed,borderwidth = 0,bg='#041c07')
+#button.pack(pady=20)
+button.place(relx=0.931,rely=0.85,relheight=0.2,relwidth=0.08)
 #button.pack(side=tk.BOTTOM)
 # scrolledtext.ScrolledText(app).pack()
 
-var = tk.StringVar()
-var.set("Hey!? How are you doing?")
-display = tk.Message(frame,bg="#FFFFFF",textvariable=var)
+# var = tk.StringVar()
+# var.set("Hey!? How are you doing?")
+# display = tk.Message(frame,bg="#FFFFFF",textvariable=var)
+# display.place()
 
-display.place(relx=0.1,rely=0.075,relwidth=0.8,relheight=0.8)
 
 
 
