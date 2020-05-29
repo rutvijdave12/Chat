@@ -17,7 +17,7 @@ SERVER ='192.168.1.103'
 ADDR = (SERVER,PORT)
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "DISCONNECTED!"
-msgs_list = []
+msgs_list = ['aa']
 
 # def msgs(msg):
 #     msgs_list.append(msg)

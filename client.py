@@ -24,14 +24,23 @@ def send(msg):
     send_length += b' '*(HEADER - len(send_length))
     client.send(send_length)
     client.send(message)
+    # print(client.recv(2048).decode(FORMAT))
+    # chat = client.recv(2048).decode(FORMAT)
+    # chat = chat.split('-')
+    # print(chat)
+    # d = tk.Message(frame,text=chat[-1])
+    # d.pack(side=tk.LEFT)
+    # if msg == DISCONNECT_MESSAGE:
+    #     client.close()
+
+
+def recieve():
     print(client.recv(2048).decode(FORMAT))
     chat = client.recv(2048).decode(FORMAT)
     chat = chat.split('-')
     print(chat)
     d = tk.Message(frame,text=chat[-1])
     d.pack(side=tk.LEFT)
-    # if msg == DISCONNECT_MESSAGE:
-    #     client.close()
 
 
 def quit_pressed():
@@ -50,9 +59,14 @@ def quit_pressed():
 
 def button_pressed():
     print("Button")
-    prompt = text.get("1.0","end")
-    send(prompt)
-    text.delete("1.0","end")
+    prompt = text.get("1.0","end").strip()
+    if prompt:
+        print("in")
+        send(prompt)
+        text.delete("1.0","end")
+    else:
+        print("nothing")
+        recieve()
 
 
 app = tk.Tk()
