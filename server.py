@@ -4,7 +4,7 @@ import threading
 HEADER = 64
 PORT = 5050
 SERVER ="192.168.1.103"
-#SERVER = socket.gethostbyname(socket.gethostname())
+#SERVER = socket.gethostbyname(socket.gethostname()) ---
 #print(socket.gethostname())
 ADDR = (SERVER,PORT)
 FORMAT = 'utf-8'
